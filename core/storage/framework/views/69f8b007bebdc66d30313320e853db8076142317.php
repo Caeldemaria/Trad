@@ -1,0 +1,1 @@
+<div style="background: #b3f0ff;" class="img_hader"><?php /**PATH /home/crickett20cup/trading.cricket-t20cup.com/core/resources/views/theme3/includes/auth/nav_script.blade.php ENDPATH**/ ?>

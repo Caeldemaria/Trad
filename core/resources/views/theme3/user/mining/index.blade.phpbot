@@ -1,0 +1,118 @@
+@extends(template().'layout.master2')
+
+@section('content2')
+<div style="background: #000000;" class="img_hader">
+ <br> 
+<!-- Wallet Card -->
+     <div class="card"><div style="background: #000000;" class="img_hader">
+        <div class="card-body"> 
+                      <div class="row">
+                <div class="col-6">
+                    <a href="{{route('user.usdt.index')}}"  <button class="btn btn-col-md-18" style="background-color: #fdc708 !important;">Main Wallet (USDT){{ showAmount(@$user->balance) }}{{ @$general->currency_sym }}</a></h3>
+                </div>
+                <div class="col-6 text-end">
+                <a href="{{route('user.usdt.index')}}"  <button class="btn btn-col-md-18" style="background-color: #fdc708 !important;">Bot  Wallet (USDT) {{ showAmount(@$user->trading_balance) }}{{ @$general->currency_sym }}</a>
+                
+            </div>
+          
+ </div>
+
+</div>  
+<div> <img src="/imag/video6246965108090605245.gif" style="height:220px;"></div>
+  <marquee style="background: #4d0000;
+    width: 98%;
+    color: red;
+    margin-left: 5px;" behavior="scroll" direction="left">
+  {{@$notice->data->title}}
+</marquee>
+
+    <!--top-nav--><div style="background: #000000;"
+        <div class="py-3 text-center">
+            <h3 class="text-center text-light my-3">
+                
+                {{ @$general->coin_name }}
+                           
+                                    
+            </h3>
+
+    <nav class="fixed-bottom2 glass-bg">
+
+     <form action="{{route('user.mining.on')}}" method="post">
+     @csrf
+<input class="border border-secondary border-1 rounded text-center text-white w-100 bg-dark" value="" placeholder="Enter Amount" type="text" name="tamount" id="tamount" >     
+        <div class="container">
+        <div class="row mt-2">
+
+            <div class="row mt-2">
+                <div class="col-6 ">
+                      </div></div>
+               <button type="submit" value="submit" <button class="btn btn-col-md-12" style="background-color: #fdc708 !important;">Start Trading</a>
+                </div>
+             
+ </div>
+
+          </div>       
+                </div>
+            </div>
+        </div>
+    <div class="tradingview-widget-container" style="height: 41vh">
+        <div class="tradingview-widget-container__widget"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+            {
+                "colorTheme": "dark",
+                "dateRange": "12M",
+                "showChart": false,
+                "locale": "en",
+                "width": "100%",
+                "largeChartUrl": "",
+                "isTransparent": true,
+                "showSymbolLogo": true,
+                "showFloatingTooltip": true,
+                "tabs": [
+                {
+                    "title": "Crypto",
+                    "symbols": [
+                    {
+                        "s": "BINANCE:BTCUSDT"
+                    },
+                    {
+                        "s": "BINANCE:TRXUSDT"
+                    },
+                    {
+                        "s": "BINANCE:ETHUSDT"
+                    },
+                    {
+                        "s": "BINANCE:XRPUSDT"
+                    },
+                    {
+                        "s": "BINANCE:MATICUSDT"
+                    },
+                    {
+                        "s": "BINANCE:AVAXUSDT"
+                    },
+                    {
+                        "s": "BINANCE:FTMUSDT"
+                    },
+                    {
+                        "s": "BINANCE:DOGEUSDT"
+                    },
+                    {
+                        "s": "BINANCE:SHIBUSDT"
+                    },
+                    {
+                        "s": "BINANCE:SOLUSDT"
+                    }
+                    ],
+                    "originalTitle": "Forex"
+                }
+                ]
+            }
+        </script>
+    </div>
+
+        <div style="margin-bottom: 20px;"></div>
+        </form>
+    </nav>
+</div>
+@endsection
+
